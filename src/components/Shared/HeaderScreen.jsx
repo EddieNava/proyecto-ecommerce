@@ -1,0 +1,54 @@
+import React, { useRef } from "react";
+import { Link, NavLink } from "react-router-dom";
+import './styles/headerScreen.css'
+import Logoecommerce from './img/Logoecommerce.png'
+
+const HeaderScreen = () => {
+
+  const navbar = useRef()
+
+  const clickMenuHam = () => {
+    navbar.current.classList.toggle('navbar-open')
+  }
+
+  return (
+    <header className="header">
+      
+        <Link to='/'><img src={Logoecommerce}/></Link>
+    
+      <div onClick={clickMenuHam} className="header__menuham">
+        <i className="fa-solid fa-bars"></i>
+      </div>
+      <nav ref={navbar} className="navbar">
+        <ul className="navbar__list">
+          <li className="navbar__items">
+            <NavLink 
+                to='/login' 
+                className={({isActive}) => isActive ? 'navbar__link-active navbar__links' : 'navbar__links'}>
+              <i className="fa-solid fa-user"></i>
+              <p className="navbar__label">Login</p>
+            </NavLink>
+          </li>
+          <li className="navbar__items">
+            <NavLink 
+                to='/purchases' 
+                className={({isActive}) => isActive ? 'navbar__link-active navbar__links' : 'navbar__links'}>
+              <i className="fa-solid fa-store"></i>
+              <p className="navbar__label">Purchases</p>
+            </NavLink>
+          </li>
+          <li className="navbar__items">
+            <NavLink 
+                to='/cart' 
+                className={({isActive}) => isActive ? 'navbar__link-active navbar__links' : 'navbar__links'}>
+              <i className="fa-solid fa-cart-shopping"></i>
+              <p className="navbar__label">Cart</p>
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
+};
+
+export default HeaderScreen;
