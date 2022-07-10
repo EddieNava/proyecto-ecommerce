@@ -46,8 +46,7 @@
   cursor: pointer;
 }
 .navbar__link-active {
-  color: white;
-  background-color: var(--secondary-color) ;
+  color: var(--color-footer)
 }
 .navbar__links i {
   margin-bottom: 5px;

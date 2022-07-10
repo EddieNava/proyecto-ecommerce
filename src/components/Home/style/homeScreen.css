@@ -18,6 +18,48 @@
   border-radius: 5px;
   border: none;
 }
+.btnsearch:hover {
+  color: white;
+  background-color: var(--secondary-color);
+  margin: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  transform: scale(1.05);
+  transition: transform 200ms ease;
+}
+
+.filterSec {
+margin: 20px;
+
+}
+.filterer {
+  padding: 20px;
+}
+.filter {
+  color: white;
+  background-color: var(--secondary-color) ;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.filter:hover {
+  transform: scale(1.05);
+  transition: transform 200ms ease;
+  color: white;
+  background-color: var(--secondary-color)
+}
+
+.titlePro {
+ text-align: center;
+  
+}
+
+.allPro:hover {
+  cursor: pointer;
+  color: var(--secondary-color)
+}
+
 .card-product {
   width: min(100%, 220px);
   border-radius: 10px;
@@ -87,4 +129,12 @@
   background-color: var(--secondary-color);
   color: var(--primary-color);
   cursor: pointer;
+}
+.card-product:hover {
+  box-shadow: 1px 1px 10px #888a;
+  transition: box-shadow 200ms ease;
+}
+.card-product__btn:hover {
+  transform: scale(1.2);
+  transition: transform 200ms ease;
 }

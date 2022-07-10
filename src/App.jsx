@@ -29,6 +29,7 @@ function App() {
         <Routes>
           <Route path='/' element={<HomeScreen />} />
           <Route path='/login' element={<LoginScreen />} />
+          <Route path='/category/:name' element={<HomeScreen />} />
 
           <Route element={<ProtectedRoutes />}>
             <Route path="/cart" element={<CartScreen />} />

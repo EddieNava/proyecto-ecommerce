@@ -1,6 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 
+
 const InputSearch = () => {
 
   const {handleSubmit, register, reset} = useForm()
@@ -18,3 +19,5 @@ const InputSearch = () => {
 }
 
 export default InputSearch
+
+
