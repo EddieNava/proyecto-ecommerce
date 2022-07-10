@@ -15,24 +15,7 @@ const HomeScreen = () => {
   console.log(products)
 
   const [productsResult, setProductsResult] = useState()
-  const [search, setSearch] = useState()
-
-
-   const handleChange = e => {
-    setSearch(e.target.value)
-    filterer(e.target.value)
-    e.preventDefault()
-  }
-
-  const filterer = (searchTerm) => {
-    let searchResult = products?.filter((element) => {
-      if(element.title.toString().toLowerCase().includes(searchTerm.toLowerCase())){
-        return element;
-      }
-    })
-    setProductsResult(searchResult);
-  }
-
+ 
   
    const {name} = useParams()
 
@@ -44,6 +27,28 @@ useEffect (() => {
   }
 }, [name])
   
+const [search, setSearch] = useState()
+
+useEffect (() => {
+  setProductsResult(products)
+}, [])
+
+
+const handleChange = e => {
+ setSearch(e.target.value)
+ filterer(e.target.value)
+ e.preventDefault()
+}
+
+
+const filterer = (searchTerm) => {
+ let searchResult = products?.filter((element) => {
+   if(element.title.toString().toLowerCase().includes(searchTerm.toLowerCase())){
+     return element;
+   }
+ })
+ setProductsResult(searchResult);
+}
 
   return (
     <div className='home'>
